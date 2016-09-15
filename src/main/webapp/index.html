@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Cálculo do IMC</title>
+		 <link href="css/bootstrap.min.css" rel="stylesheet">
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	 <link rel="stylesheet" type="text/css" href="styles.css">
+    	 
+	</head>
+	<body>
+	
+	<body background="imc2.jpg">
+	
+	<script type ="text/javascript">
+	
+
+	$(function(){
+		
+	    $('#calcular').click(function(){
+	 
+	        var peso = parseFloat($('#peso').val());
+	        var altura = parseFloat($('#alt').val());
+	        var nome = $('#nome').val();
+	        
+	        if((peso/(altura*altura)) < 17){
+	        	alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Muito abaixo do peso!");
+	        	}
+	        
+	        if((peso/(altura*altura)) >= 17 && (peso/(altura*altura)) < 18.5){
+		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Abaixo do peso!");
+		        }
+	        
+	        if((peso/(altura*altura)) >= 18.5 && (peso/(altura*altura)) < 24.5){
+		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Peso normal!");
+		        }
+	        
+	        if((peso/(altura*altura)) >= 24.5 && (peso/(altura*altura)) < 30){
+		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Acima do peso!");
+		        }
+	        
+	        if((peso/(altura*altura)) >= 30){
+		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Obesidade!");
+		        }
+	    });
+	});
+	
+	
+	</script>
+	<div align="center">
+	<h1> Cálculo do IMC </h1>
+	<br>
+	<h1> Nome </h1>
+	<input class="tamanho texto" id="nome" placeholder="digite seu nome" />
+	<h1> Peso </h1>
+	<input  class="tamanho texto" id="peso" placeholder="digite seu peso"/>
+	<h1> Altura </h1>
+	<input class="tamanho texto" id="alt" placeholder="digite sua altura"/>
+	<br>
+	<br>
+	<a id="calcular"  class="botao btn btn-primary btn-warning">Calcular</a>
+	
+	</div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
