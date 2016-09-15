@@ -21,26 +21,52 @@
 	        var peso = parseFloat($('#peso').val());
 	        var altura = parseFloat($('#alt').val());
 	        var nome = $('#nome').val();
+	        var sexo = $('#sexo').val();
 	        
-	        if((peso/(altura*altura)) < 17){
-	        	alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Muito abaixo do peso!");
+	        if(sexo == "F"){
+	        
+	        	if((peso/(altura*altura)) < 19.1){
+	        		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Abaixo do peso!");
+	        		}
+	        
+	        	if((peso/(altura*altura)) >= 19.1 && (peso/(altura*altura)) < 25.8){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Peso normal!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 25.8 && (peso/(altura*altura)) < 27.3){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Marginalmente acima do peso!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 27.3 && (peso/(altura*altura)) < 32.3){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Acima do peso!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 32.3){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Obesidade!");
+		        	}
+	        }
+	        
+	        else if (sexo == "M") {
+	        	if((peso/(altura*altura)) < 20.7){
+	        		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Abaixo do peso!");
+	        		}
+	        
+	        	if((peso/(altura*altura)) >= 20.7 && (peso/(altura*altura)) < 26.4){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Peso normal!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 26.4 && (peso/(altura*altura)) < 27.8){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Marginalmente acima do peso!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 27.8 && (peso/(altura*altura)) < 31.1){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Acima do peso!");
+		        	}
+	        
+	        	if((peso/(altura*altura)) >= 31.1){
+		   			alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Obesidade!");
+		        	}
 	        	}
-	        
-	        if((peso/(altura*altura)) >= 17 && (peso/(altura*altura)) < 18.5){
-		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Abaixo do peso!");
-		        }
-	        
-	        if((peso/(altura*altura)) >= 18.5 && (peso/(altura*altura)) < 24.5){
-		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Peso normal!");
-		        }
-	        
-	        if((peso/(altura*altura)) >= 24.5 && (peso/(altura*altura)) < 30){
-		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Acima do peso!");
-		        }
-	        
-	        if((peso/(altura*altura)) >= 30){
-		   		alert("O IMC de " + nome + " e igual a " + (peso/(altura*altura)).toFixed(2) + ". Situacao: Obesidade!");
-		        }
 	    });
 	});
 	
@@ -49,6 +75,8 @@
 	<div align="center">
 	<h1> Cálculo do IMC </h1>
 	<br>
+	<h1> Sexo </h1>
+	<input class="tamanho texto" id="sexo" placeholder="digite seu sexo (M ou F)" />
 	<h1> Nome </h1>
 	<input class="tamanho texto" id="nome" placeholder="digite seu nome" />
 	<h1> Peso </h1>
